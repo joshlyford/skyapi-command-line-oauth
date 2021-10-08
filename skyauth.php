@@ -4,8 +4,7 @@
 
 $configs = [
     'Ip' =>'127.0.0.1',
-    'Port' => '8080',
-    'Dev' => false
+    'Port' => '8080'
 ];
 
 if(file_exists('config.json')){
@@ -13,7 +12,8 @@ if(file_exists('config.json')){
     $json_a = json_decode($string, true);
     $configs = array_merge($configs, $json_a);
 } else {
-    echo 'Please create a config.json file from the config.example.json file';
+    echo "Please create a config.json file from the config.example.json file\n";
+    die();
 }
 
 print_r($configs);
