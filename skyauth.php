@@ -55,6 +55,7 @@ $response = http('https://oauth2.sky.blackbaud.com/token', [
   'redirect_uri' => $redirect_uri,
   'client_id' => $configs['ClientId'],
   'client_secret' => $configs['ClientSecret'],
+   'preserve_refresh_token' => true
 ]);
 
 if(!isset($response->access_token)) {
